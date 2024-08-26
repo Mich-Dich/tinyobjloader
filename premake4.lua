@@ -23,7 +23,12 @@ solution "TinyObjLoaderSolution"
          flags { "Symbols" }
          targetname "loader_example_debug"
 
+      filter "configurations:RelWithDebInfo"
+         runtime "Release"
+         flags { "Symbols", "Optimize" }
+         targetname "loader_example"
+   
       configuration "Release"
          -- defines { "NDEBUG" } -- -NDEBUG
-         flags { "Symbols", "Optimize" }
+         flags { "Optimize" }
          targetname "loader_example"
